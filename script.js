@@ -7,7 +7,9 @@ function getRandomStudent() {
         .then(response => response.json())
         .then(data => {
             setTimeout(() => {
-                infoElement.innerHTML = `學號: ${data.id}<br>姓名: ${data.name}`;
+                // 處理學號，只顯示前三碼和後三碼
+                const maskedId = maskStudentId(data.id);
+                infoElement.innerHTML = `學號: ${maskedId}<br>姓名: ${data.name}`;
                 infoElement.style.opacity = '1';
             }, 500);
         })
@@ -16,4 +18,14 @@ function getRandomStudent() {
             infoElement.innerText = "出錯了，請重試！";
             infoElement.style.opacity = '1';
         });
+}
+
+function maskStudentId(id) {
+    if (id.length <= 6) {
+        return id; // 如果學號長度不足，直接返回原始學號
+    }
+    const prefix = id.slice(0, 3);
+    const suffix = id.slice(-3);
+    const maskedPart = '*'.repeat(id.length - 6);
+    return `${prefix}${maskedPart}${suffix}`;
 }
