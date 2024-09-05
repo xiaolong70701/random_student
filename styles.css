@@ -9,27 +9,51 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: url('./assets/ss_building.jpg') no-repeat center center fixed; /* 新增背景圖片 */
+    background-size: cover; /* 確保背景圖片覆蓋整個頁面 */
+    padding: 20px;
 }
-.container {
+.center-title {
+    font-size: 2.5rem;
+    color: #ffffff; /* 可根據背景調整字體顏色 */
     text-align: center;
+    position: absolute; /* 使用絕對定位 */
+    top: 10%; /* 調整標題距離頂部的位置 */
+    left: 50%;
+    transform: translateX(-50%); /* 保證標題在水平居中 */
+    z-index: 1; /* 確保標題在最前方 */
+    font-weight: bold;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+.container, .student-list-container {
     background-color: white;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
     width: 400px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
 }
-h1 {
+h1, h2 {
     color: #2c3e50;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
 }
 button {
-    background-color: #3498db;
+    background-color: #194A8D;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -48,15 +72,47 @@ button:active {
     transform: translateY(1px);
 }
 #studentInfo {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-size: 1rem;
     color: #34495e;
     background-color: #ecf0f1;
     padding: 1.5rem;
     border-radius: 10px;
     transition: all 0.3s ease;
-    min-height: 80px; /* 確保即使沒有內容也有一定高度 */
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
+}
+#studentList {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 300px;
+    margin-bottom: 1rem;
+}
+#studentList li {
+    padding: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+#studentList li:last-child {
+    border-bottom: none;
+}
+.student-list-container button {
+    background-color: #39a275;
+}
+.student-list-container button:hover {
+    background-color: #40ba85;
+}
+@media (max-width: 850px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container, .student-list-container {
+        margin-bottom: 20px;
+    }
 }

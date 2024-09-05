@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>隨機抽取學生</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./assets/raffle.png">
 </head>
-<body>
-    <div class="container">
-        <h1>隨機抽取學生</h1>
-        <button onclick="getRandomStudent()">抽取學生</button>
-        <div id="studentInfo"><p style="color: gray;">等待抽取...</p></div>
-    </div>
+<body>    
+    <h1 class="center-title">行政法（一）</h1>
 
+    <div class="main-container">
+        <div class="container">
+            <h1>隨機抽取學生</h1>
+            <button onclick="getRandomStudent()">抽取學生</button>
+            <div id="studentInfo">等待抽取...</div>
+        </div>
+        <div class="student-list-container">
+            <h2>已抽取學生列表</h2>
+            <ul id="studentList"></ul>
+            <button onclick="saveAndClearList()">儲存</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
