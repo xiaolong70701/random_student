@@ -107,6 +107,46 @@ button:active {
 .student-list-container button:hover {
     background-color: #40ba85;
 }
+
+/* Media query for small screens like smartphones */
+@media (max-width: 600px) {
+    .center-title {
+        font-size: 1.8rem; /* 調整標題字體大小 */
+        top: 5%; /* 更靠近頂部 */
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* 減少間距 */
+    }
+
+    .container, .student-list-container {
+        width: 100%; /* 滿版顯示 */
+        max-width: 100%; /* 不設限最大寬度 */
+        padding: 1.5rem; /* 減少 padding */
+    }
+
+    h1, h2 {
+        font-size: 1.2rem; /* 調整標題字體大小 */
+    }
+
+    button {
+        font-size: 0.9rem; /* 調整按鈕字體大小 */
+        padding: 10px 20px; /* 減少按鈕 padding */
+    }
+
+    #studentInfo {
+        font-size: 0.9rem; /* 調整訊息字體大小 */
+        padding: 1rem; /* 減少 padding */
+    }
+
+    #studentList {
+        max-height: 200px; /* 降低列表的最大高度 */
+    }
+}
+
+/* Media query for tablets */
 @media (max-width: 850px) {
     .main-container {
         flex-direction: column;
@@ -114,5 +154,7 @@ button:active {
     }
     .container, .student-list-container {
         margin-bottom: 20px;
+        width: 100%; /* 讓區塊占滿寬度 */
+        max-width: 90%;
     }
 }
