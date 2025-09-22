@@ -15,7 +15,7 @@ function getRandomStudent() {
 }
 
 function fetchStudent() {
-    fetch('https://script.google.com/macros/s/AKfycbyGo6lC1VZsJsSdcrZTjqLkhtPKo9_y6r0rNF-qZV9nmlQbIcMxeHqgdmY1KpIDnSU/exec')
+    fetch('https://script.google.com/macros/s/AKfycbyHkwb4rhAsrjnJ_epLG-7Y-T9ZWYXfw_jXNmXp0ttdh7ilmjvTeGWhbRj34z4zKF70/exec')
         .then(response => response.json())
         .then(data => {
             setTimeout(() => {
